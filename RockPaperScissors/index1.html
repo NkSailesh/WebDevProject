@@ -4,32 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <button onclick="
+    <div class="OrGame">
+         <p class="title">Rock Paper Scissor</p>
+   
+     <button class="Move-Button" onclick="
        PlayTheGame('rock');
-        ">Rock</button>
+        "><img src="Image/rock.jpg" alt="Rock" class="Move-Icon"></button>
 
-     <button onclick="
+     <button class="Move-Button" onclick="
        PlayTheGame('paper');
-        ">Paper</button>
+        "><img src="Image/paper.jpg" alt="Paper" class="Move-Icon"></button>
 
       
-     <button onclick="
+     <button  class="Move-Button" onclick="
        PlayTheGame('scissor');
-        ">Scissor</button>
+        "><img src="Image/scissor.jpg" alt="Scissor" class="Move-Icon"></button>
 
-         <p class="js-times"></p>
+        <p class="js-times"></p>
         <p class="js-chois"> </p>
         <p class="js-move"></p>
-        <button onclick="
+        <button class="button-css" onclick="
         Times.lose=0;
         Times.win=0;
         Times.tai=0;
           updateResult();
+        
        
         ">Reset</button>
        
+    </div>
+   
         
      <script>
         let Times= JSON.parse( localStorage.getItem('score'));
@@ -82,24 +89,30 @@
             }
         }
         if(Result==='Tai.'){
-            Times.tai +=1;
+            Times.tai = Times.tai+1;
         }
         else if(Result==='You Win.'){
-            Times.win +=1;
+            Times.win = Times.win+1;
         }
         else if(Result==='You Lose.'){
-            Times.lose +=1;
+            Times.lose =Times.lose  +1;
         }
              localStorage.setItem('score',JSON.stringify(Times))
              updateResult();
-             document.querySelector('.js-move').innerHTML=` Your move is ${playerMove}
-            ,Comuter Move is ${CompMove}`;
              document.querySelector('.js-chois').innerHTML=Result;
+             document.querySelector('.js-move').innerHTML=` You
+            <img src="Image/${playerMove}.jpg" class="Move-Icon">
+             <img src="Image/${CompMove}.jpg" class="Move-Icon">
+             Computer `;
+             
    
         }
         function updateResult(){
+             
             document.querySelector('.js-times').innerHTML= 
         `Win: ${Times.win}, Loss; ${Times.lose}, Tai: ${Times.tai}`;
+        
+      
         }
         function ComputerMoveReturn(){
         const Randomvalu= Math.random();
@@ -116,9 +129,6 @@
         
         return CompMove;
         }
-
-        
-        
      </script>
 </body>
 </html>
