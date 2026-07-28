@@ -7,7 +7,8 @@ body{
     font-weight: bold;
     
 }
-.button-css{
+.button-css,
+.Autoplay{
    margin-left: 20%;
     margin-top: 20px;
     background-color: rgb(252, 252, 252);   

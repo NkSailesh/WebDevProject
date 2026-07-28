@@ -7,8 +7,23 @@ let Times= JSON.parse( localStorage.getItem('score'));
         }
 
         updateResult();
-          
-
+          let autoplaying= false;
+          let Interval;
+          //AUTO PLAY BUTTON
+        function autoPlay(){
+           if(!autoplaying){
+                Interval=setInterval(function(){
+                 const playerMove=ComputerMoveReturn();
+                PlayTheGame(playerMove);
+            },2000);
+            autoplaying=true;
+           }
+           else{
+            clearInterval(Interval);
+            autoplaying=false;
+           }
+            
+        }
         function PlayTheGame(playerMove){
         const CompMove = ComputerMoveReturn();
         let Result='';
