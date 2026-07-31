@@ -11,10 +11,7 @@ function displayonpage(){
         <div class=" Listadd">
            <div class=" Listadd1">  ${Name}  </div>
              <div class=" Listadd2">${Date}</div>
-         <button onclick="
-             arrayoflist.splice(${i},1);
-             displayonpage();
-            " class="delete-list-Bun"
+         <button  class="delete-list-Bun js-delete-list-Bun"
            >Delete</button> </div>` ;
        
     todolistHtml+=html;
@@ -22,7 +19,21 @@ function displayonpage(){
     }
     document.querySelector('.List-Add')
     .innerHTML=todolistHtml;
+
+    document.querySelectorAll('.js-delete-list-Bun')
+    .forEach((event,i)=>{
+        event.addEventListener('click',()=>{
+            arrayoflist.splice(i,1);
+             displayonpage();
+        });
+    });
+
 }
+    document.querySelector('.js-Add-list')
+    .addEventListener('click',()=>{
+         Addlist();
+    });
+   
 
 function Addlist(){
    

@@ -25,7 +25,8 @@ let Times= JSON.parse( localStorage.getItem('score'));
            PlayTheGame('paper');
           });
 
-          document.querySelector('.js-Move-Button3').addEventListener
+          document.querySelector('.js-Move-Button3')
+          .addEventListener
        ('click',()=>{
            PlayTheGame('scissor');
           });
