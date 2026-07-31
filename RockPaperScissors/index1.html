@@ -10,33 +10,22 @@
     <div class="OrGame">
          <p class="title">Rock Paper Scissor</p>
    
-     <button class="Move-Button" onclick="
-       PlayTheGame('rock');
-        "><img src="Image/rock.jpg" alt="Rock" class="Move-Icon"></button>
+     <button class="Move-Button js-Move-Button1">
+      <img src="Image/rock.jpg" alt="Rock" class="Move-Icon"></button>
 
-     <button class="Move-Button" onclick="
-       PlayTheGame('paper');
-        "><img src="Image/paper.jpg" alt="Paper" class="Move-Icon"></button>
+     <button class="Move-Button  js-Move-Button2">
+      <img src="Image/paper.jpg" alt="Paper" class="Move-Icon"></button>
 
       
-     <button  class="Move-Button" onclick="
-       PlayTheGame('scissor');
-        "><img src="Image/scissor.jpg" alt="Scissor" class="Move-Icon"></button>
+     <button  class="Move-Button  js-Move-Button3">
+      <img src="Image/scissor.jpg" alt="Scissor" class="Move-Icon"></button>
 
         <p class="js-times"></p>
         <p class="js-chois"> </p>
         <p class="js-move"></p>
-        <button class="button-css" onclick="
-        Times.lose=0;
-        Times.win=0;
-        Times.tai=0;
-          updateResult();
-        
-       
-        ">Reset</button>
+        <button class="button-css Js-button-css">Reset</button>
         <button 
-        onclick=" autoPlay();"
-        class="Autoplay">Autoplay</button>
+        class="Autoplay Js-Autoplay">Autoplay</button>
        
     </div>
    

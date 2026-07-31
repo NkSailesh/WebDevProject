@@ -10,6 +10,34 @@ let Times= JSON.parse( localStorage.getItem('score'));
           let autoplaying= false;
           let Interval;
           //AUTO PLAY BUTTON
+       document.querySelector('.Js-Autoplay').addEventListener
+       ('click',()=>{
+            autoPlay();
+          });
+             //YOUR MOVE
+       document.querySelector('.js-Move-Button1').addEventListener
+       ('click',()=>{
+           PlayTheGame('rock');
+          });
+
+          document.querySelector('.js-Move-Button2').addEventListener
+       ('click',()=>{
+           PlayTheGame('paper');
+          });
+
+          document.querySelector('.js-Move-Button3').addEventListener
+       ('click',()=>{
+           PlayTheGame('scissor');
+          });
+          // RESET BUTTON
+          document.querySelector('.Js-button-css')
+          .addEventListener('click',()=>{
+                    Times.lose=0;
+                    Times.win=0;
+                    Times.tai=0;
+                    updateResult();
+          });
+
         function autoPlay(){
            if(!autoplaying){
                 Interval=setInterval(function(){
@@ -21,9 +49,9 @@ let Times= JSON.parse( localStorage.getItem('score'));
            else{
             clearInterval(Interval);
             autoplaying=false;
-           }
-            
+           }  
         }
+
         function PlayTheGame(playerMove){
         const CompMove = ComputerMoveReturn();
         let Result='';
